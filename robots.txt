@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dailyedgecr.com/sitemap.xml
+Sitemap: https://www.dailyedgecr.com/sitemap.xml
