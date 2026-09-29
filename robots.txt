@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dailyedge.pages.dev/sitemap.xml
+Sitemap: https://dailyedge-two.vercel.app/sitemap.xml
