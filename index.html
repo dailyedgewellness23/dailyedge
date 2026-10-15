@@ -6,7 +6,6 @@
 <title>DailyEdge CR | Páginas web para negocios en Costa Rica</title>
 <meta name="description" content="Diseño de páginas web para restaurantes, sodas, talleres, floristerías, rent a car y gimnasios en Costa Rica. Listas en 7 días hábiles, con WhatsApp y Google Maps. Desde ₡25.000.">
 <link rel="canonical" href="https://www.dailyedgecr.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D4ED8'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EDE%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#1D4ED8">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CR">
@@ -121,6 +120,8 @@ h2{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.15}
 .combo{position:relative;padding:0 48px 40px 0;min-width:0}
 .combo .phone{position:absolute;right:0;bottom:0;width:30%;height:auto;border-radius:18px;border:5px solid #0F1B33;box-shadow:0 18px 36px rgba(15,27,51,.25);background:#0F1B33}
 .soon{margin-top:20px;padding:20px 24px;border:1px dashed #B9C6DD;border-radius:14px;color:var(--muted);font-size:15px}
+.project + .project{margin-top:24px}
+@media (min-width:901px){.project.flip .combo{order:2}}
 @media (max-width:900px){.project{grid-template-columns:1fr;padding:22px}}
 
 /* Plan */
@@ -265,18 +266,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div>
         <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><b>chicharroneralagranja.com</b></div>
-          <div class="reel" id="reel" aria-roledescription="carrusel" aria-label="Capturas de la página de la Chicharronera">
-            <img class="slide is-on" src="img/foto-1.jpg" alt="Inicio de la página de la Chicharronera" width="1200" height="571">
-            <img class="slide" src="img/foto-2.jpg" alt="Platos de la casa" width="1200" height="571" loading="lazy">
-            <img class="slide" src="img/foto-3.jpg" alt="Menú para llevar con precios por kilo" width="1200" height="571" loading="lazy">
-            <img class="slide" src="img/foto-4.jpg" alt="Contacto y ubicación en el mapa" width="1200" height="571" loading="lazy">
+          <div class="browser-bar"><i></i><i></i><i></i><b id="reel-site">chicharroneralagranja.com</b></div>
+          <div class="reel" id="reel" aria-roledescription="carrusel" aria-label="Capturas de páginas hechas por DailyEdge">
+            <img class="slide is-on" src="img/foto-1.jpg" alt="Inicio de la página de la Chicharronera" width="1200" height="571" data-site="chicharroneralagranja.com" data-url="https://www.chicharroneralagranja.com/">
+            <img class="slide" src="img/foto-8.jpg" alt="Inicio de la página de FASE Rent a Car" width="800" height="380" loading="lazy" data-site="faserentacar.com" data-url="https://faserentacar.com/">
+            <img class="slide" src="img/foto-2.jpg" alt="Platos de la casa de la Chicharronera" width="1200" height="571" loading="lazy" data-site="chicharroneralagranja.com" data-url="https://www.chicharroneralagranja.com/">
+            <img class="slide" src="img/foto-10.jpg" alt="Flota de SUVs de FASE Rent a Car" width="800" height="380" loading="lazy" data-site="faserentacar.com" data-url="https://faserentacar.com/">
+            <img class="slide" src="img/foto-3.jpg" alt="Menú para llevar con precios por kilo" width="1200" height="571" loading="lazy" data-site="chicharroneralagranja.com" data-url="https://www.chicharroneralagranja.com/">
+            <img class="slide" src="img/foto-9.jpg" alt="Cotizador de FASE Rent a Car que envía la reserva por WhatsApp" width="800" height="380" loading="lazy" data-site="faserentacar.com" data-url="https://faserentacar.com/">
+            <img class="slide" src="img/foto-4.jpg" alt="Contacto y ubicación en el mapa de la Chicharronera" width="1200" height="571" loading="lazy" data-site="chicharroneralagranja.com" data-url="https://www.chicharroneralagranja.com/">
             <button type="button" class="reel-btn prev" aria-label="Imagen anterior"><svg class="icon" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
             <button type="button" class="reel-btn next" aria-label="Imagen siguiente"><svg class="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-            <div class="reel-dots"><button type="button" aria-label="Ver imagen 1" aria-current="true"></button><button type="button" aria-label="Ver imagen 2"></button><button type="button" aria-label="Ver imagen 3"></button><button type="button" aria-label="Ver imagen 4"></button></div>
+            <div class="reel-dots"><button type="button" aria-label="Ver imagen 1" aria-current="true"></button><button type="button" aria-label="Ver imagen 2"></button><button type="button" aria-label="Ver imagen 3"></button><button type="button" aria-label="Ver imagen 4"></button><button type="button" aria-label="Ver imagen 5"></button><button type="button" aria-label="Ver imagen 6"></button><button type="button" aria-label="Ver imagen 7"></button></div>
           </div>
         </div>
-        <p class="caption">Proyecto real · <a href="https://www.chicharroneralagranja.com/" target="_blank" rel="noopener">chicharroneralagranja.com</a></p>
+        <p class="caption">Proyecto real · <a id="reel-link" href="https://www.chicharroneralagranja.com/" target="_blank" rel="noopener">chicharroneralagranja.com</a></p>
       </div>
     </div>
   </section>
@@ -327,6 +331,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <p class="lead" style="font-size:16px">Chicharronera en Sarchí Norte. La página muestra los platos de la casa, el menú con precios por kilo, el horario y la ubicación en el mapa, con botones para pedir directo por WhatsApp.</p>
           <div class="tags"><span>Menú con precios</span><span>Google Maps</span><span>WhatsApp</span><span>Celular</span></div>
           <div><a class="btn btn-ghost" href="https://www.chicharroneralagranja.com/" target="_blank" rel="noopener">Ver página</a></div>
+        </div>
+      </div>
+      <div class="project flip">
+        <div class="combo">
+          <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><b>faserentacar.com</b></div>
+          <img class="shot" src="img/foto-8.jpg" alt="Página de inicio de FASE Rent a Car" width="800" height="380" loading="lazy">
+          </div>
+          <img class="phone" src="img/foto-11.jpg" alt="La página de FASE Rent a Car vista en el celular" width="400" height="759" loading="lazy">
+        </div>
+        <div class="project-info">
+          <span class="eyebrow">Rent a car · Alajuela</span>
+          <h3>FASE Rent a Car</h3>
+          <p class="lead" style="font-size:16px">Alquiler de SUVs automáticos para turistas y nacionales. La página muestra la flota con fotos y especificaciones, los requisitos para alquilar y un cotizador que manda el carro, el lugar y las fechas directo por WhatsApp. Está en español y en inglés.</p>
+          <div class="tags"><span>Flota con fichas</span><span>Cotizador por WhatsApp</span><span>Español e inglés</span><span>Celular</span></div>
+          <div><a class="btn btn-ghost" href="https://faserentacar.com/" target="_blank" rel="noopener">Ver página</a></div>
         </div>
       </div>
       <div class="soon">Tu negocio puede ser el próximo proyecto de esta lista.</div>
@@ -399,7 +419,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p>Estudio Ingeniería Industrial, una carrera enfocada en hacer que los procesos funcionen mejor, y eso mismo aplico a tu negocio. Antes de diseñar, entiendo cómo te llegan los clientes hoy y en qué punto se están perdiendo.</p>
         <p>Creé DailyEdge porque veo negocios buenísimos que casi no aparecen en internet. La gente los busca en el celular y no encuentra ni el horario ni un número para escribir. Mi trabajo es que eso no te pase.</p>
         <p>Conmigo tratás directo, sin intermediarios. Te explico todo en palabras sencillas y te respondo por WhatsApp.</p>
-        <div class="facts"><span>Ingeniería Industrial</span><span>Costa Rica</span><span>Proyecto real: Chicharronera La Granja</span><span>Atención directa por WhatsApp</span></div>
+        <div class="facts"><span>Ingeniería Industrial</span><span>Costa Rica</span><span>Proyectos: Chicharronera La Granja y FASE Rent a Car</span><span>Atención directa por WhatsApp</span></div>
       </div>
     </div>
   </section>
@@ -559,7 +579,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     document.body.appendChild(a); a.click(); a.remove();
   });
 
-  // Carrete de imagenes de la Chicharronera
+  // Carrete de imagenes de los proyectos
   (function(){
     const reel=document.getElementById("reel"); if(!reel) return;
     const slides=[...reel.querySelectorAll(".slide")], dots=[...reel.querySelectorAll(".reel-dots button")];
@@ -569,6 +589,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       slides[i].classList.remove("is-on"); dots[i].removeAttribute("aria-current");
       i=(n+slides.length)%slides.length;
       slides[i].classList.add("is-on"); dots[i].setAttribute("aria-current","true");
+      const site=slides[i].dataset.site, url=slides[i].dataset.url;
+      if(site){ const b=document.getElementById("reel-site"), l=document.getElementById("reel-link"); if(b) b.textContent=site; if(l){ l.textContent=site; l.href=url; } }
     }
     function stop(){ clearInterval(timer); }
     function start(){ stop(); if(!reduce){ timer=setInterval(function(){go(i+1);},3500); } }
