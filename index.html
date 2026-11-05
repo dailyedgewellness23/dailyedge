@@ -132,6 +132,16 @@ h2{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.15}
 .plan .monthly{margin-top:-6px}
 .plan-annual{max-width:760px;margin:28px auto 0;padding:14px 18px;border-radius:12px;background:var(--blue-soft);color:var(--blue-dark);text-align:center;font-size:15px}
 .plan-annual b{color:var(--blue)}
+.ptabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:-16px 0 24px}
+.ptab{border:1.5px solid var(--line);background:#fff;color:var(--ink);padding:10px 18px;border-radius:999px;font:600 15px var(--font);cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.ptab:hover{border-color:var(--blue);color:var(--blue)}
+.ptab.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.ppanel{display:none}
+.ppanel.on{display:block;animation:pin .35s ease}
+@keyframes pin{from{opacity:0;transform:translateY(8px)}}
+.plan-for-all{text-align:center;color:var(--muted);margin:0 auto 22px;max-width:620px;font-size:15px}
+.plan-row.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;margin:0 auto}
+@media (max-width:520px){.ptabs{gap:6px;flex-wrap:nowrap}.ptab{padding:8px 11px;font-size:13px;white-space:nowrap}}
 .plan-note{max-width:760px;margin:16px auto 0;text-align:center;font-size:14px;color:var(--muted)}
 .plan{background:#fff;border:1px solid var(--line,#DCE3EE);border-radius:18px;padding:34px;display:flex;flex-direction:column;gap:18px}
 .plan .btn{margin-top:auto}
@@ -150,7 +160,7 @@ h2{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.15}
 .checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .checks li{display:flex;gap:10px;align-items:flex-start}
 .checks .icon{color:var(--blue);width:20px;height:20px;margin-top:3px}
-@media (max-width:1000px){.plan-row{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+@media (max-width:1000px){.plan-row,.plan-row.two{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
 .plan-top h3{white-space:nowrap}.plan-top .pill{white-space:nowrap}
 @media (max-width:520px){.plan{padding:24px 20px}.plan-top{flex-wrap:wrap;gap:8px}.price{font-size:34px}.price s{font-size:18px}}
 
@@ -365,8 +375,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="head plan-head">
         <span class="eyebrow">Planes</span>
         <h2>Planes claros, sin letra pequeña</h2>
-        <p class="lead">Escogé el plan según lo que necesita tu negocio. Todos incluyen dominio, botón de WhatsApp y diseño para celular.</p>
+        <p class="lead">Escogé lo que necesita tu negocio: una página web, una aplicación para administrarlo o una tienda en línea con pagos.</p>
       </div>
+      <div class="ptabs" role="tablist" aria-label="Tipo de plan">
+        <button type="button" class="ptab on" role="tab" aria-selected="true" data-p="pp-web">Páginas web</button>
+        <button type="button" class="ptab" role="tab" aria-selected="false" data-p="pp-app">Aplicaciones</button>
+        <button type="button" class="ptab" role="tab" aria-selected="false" data-p="pp-shop">Tiendas en línea</button>
+      </div>
+      <div class="ppanel on" id="pp-web" role="tabpanel">
+      <p class="plan-for-all">Todos incluyen dominio, botón de WhatsApp y diseño para celular.</p>
       <div class="plan-row">
       <div class="plan">
         <div class="plan-top"><h3>Plan Básico</h3></div>
@@ -414,8 +431,78 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <a class="btn btn-ghost js-wa" href="#" data-msg="Hola, me interesa el Plan Completo de DailyEdge.">Quiero el Plan Completo</a>
       </div>
       </div>
-      <div class="plan-annual"><b>Pagá el año completo y llevate 2 meses gratis.</b> Aplica para la mensualidad de cualquier plan.</div>
-      <p class="plan-note">En todos los planes: el diseño incluye 2 rondas de revisiones. Los cambios pequeños son textos, precios, fotos u horarios, se entregan en 2 días hábiles y no son acumulables. Cada cambio grande o ronda extra de revisiones cuesta ₡10.000. Al cumplir 6 meses, el dominio pasa a tu nombre y es tuyo para siempre. Tiendas en línea o reservas con pago se cotizan aparte.</p>
+      <div class="plan-annual"><b>Pagá el año completo y llevate 2 meses gratis.</b> Aplica para la mensualidad de cualquier plan de página web.</div>
+      <p class="plan-note">En todos los planes: el diseño incluye 2 rondas de revisiones. Los cambios pequeños son textos, precios, fotos u horarios, se entregan en 2 días hábiles y no son acumulables. Cada cambio grande o ronda extra de revisiones cuesta ₡10.000. Al cumplir 6 meses, el dominio pasa a tu nombre y es tuyo para siempre. Tiendas en línea o reservas con pago: mirá los planes de Tiendas en línea.</p>
+      </div>
+      <div class="ppanel" id="pp-app" role="tabpanel" hidden>
+      <p class="plan-for-all">Para negocios que necesitan llevar el control de su inventario, clientes o registros desde el celular o la compu.</p>
+      <div class="plan-row two">
+      <div class="plan">
+        <div class="plan-top"><h3>Aplicación Básica</h3></div>
+        <div class="price">₡120.000 <small>pago inicial</small></div>
+        <div class="monthly">+ ₡12.500 <small>al mes</small></div>
+        <ul class="checks">
+          <li><svg class="icon"><use href="#i-check"/></svg>Registro y consulta de información</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Inventario sencillo</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Panel administrativo básico</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Base de datos segura en la nube (Firebase)</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Mantenimiento técnico</li>
+        </ul>
+        <a class="btn btn-ghost js-wa" href="#" data-msg="Hola, me interesa la Aplicación Básica de DailyEdge.">Quiero la Aplicación Básica</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-top"><h3>Aplicación Profesional</h3></div>
+        <div class="price">₡200.000 <small>pago inicial</small></div>
+        <div class="monthly">+ ₡20.000 <small>al mes</small></div>
+        <ul class="checks">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Todo lo de la Aplicación Básica</b></span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Inventario con movimientos</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Reportes y estadísticas</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Control de usuarios y permisos</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Panel administrativo avanzado</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Funciones personalizadas según el alcance</li>
+        </ul>
+        <a class="btn btn-primary js-wa" href="#" data-msg="Hola, me interesa la Aplicación Profesional de DailyEdge.">Quiero la Aplicación Profesional</a>
+      </div>
+      </div>
+      <p class="plan-note">El alcance de cada aplicación se define en una reunión según lo que necesite tu negocio.</p>
+      </div>
+      <div class="ppanel" id="pp-shop" role="tabpanel" hidden>
+      <p class="plan-for-all">Tu tienda en línea con pagos, conectada a una aplicación para manejar productos, pedidos e inventario.</p>
+      <div class="plan-row two">
+      <div class="plan featured">
+        <div class="plan-top"><h3>E-commerce Pro</h3><span class="pill">Plan integrado</span></div>
+        <div class="price">₡350.000 <small>pago inicial</small></div>
+        <div class="monthly">+ ₡30.000 <small>al mes</small></div>
+        <ul class="checks">
+          <li><svg class="icon"><use href="#i-check"/></svg>Página web con catálogo y carrito</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Pagos en línea con Tilopay u otra pasarela compatible</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Aplicación web administrativa</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Inventario sincronizado</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Gestión de productos, pedidos y ventas</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Existencias que se actualizan solas al confirmarse un pago</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Reportes básicos</li>
+        </ul>
+        <a class="btn btn-primary js-wa" href="#" data-msg="Hola, me interesa el E-commerce Pro de DailyEdge.">Quiero el E-commerce Pro</a>
+      </div>
+      <div class="plan">
+        <div class="plan-top"><h3>E-commerce Empresarial</h3></div>
+        <div class="price">Desde ₡500.000 <small>pago inicial</small></div>
+        <div class="monthly">Desde ₡45.000 <small>al mes</small></div>
+        <ul class="checks">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Todo lo del E-commerce Pro</b></span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Múltiples usuarios y roles</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Reportes avanzados</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Módulos personalizados</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Integraciones adicionales</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Automatización de procesos</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Mayor capacidad según lo que necesite tu negocio</li>
+        </ul>
+        <a class="btn btn-ghost js-wa" href="#" data-msg="Hola, me interesa el E-commerce Empresarial de DailyEdge.">Quiero el E-commerce Empresarial</a>
+      </div>
+      </div>
+      <p class="plan-note">El alcance de cada tienda se define en una reunión según lo que necesite tu negocio.</p>
+      </div>
     </div>
   </section>
 
@@ -602,6 +689,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     const a = document.createElement("a");
     a.href = waLink(msg); a.target = "_blank"; a.rel = "noopener";
     document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  // Pestañas de planes
+  document.querySelectorAll(".ptab").forEach(function(t){
+    t.addEventListener("click",function(){
+      document.querySelectorAll(".ptab").forEach(function(x){ const on=x===t; x.classList.toggle("on",on); x.setAttribute("aria-selected",on?"true":"false"); });
+      document.querySelectorAll(".ppanel").forEach(function(p){ const on=p.id===t.dataset.p; p.classList.toggle("on",on); p.hidden=!on; });
+    });
   });
 
   // Carrete de imagenes de los proyectos
