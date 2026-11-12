@@ -3,6 +3,23 @@
 <head><link rel="icon" type="image/png" href="/favicon.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1688716692957804');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1688716692957804&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <title>DailyEdge CR | Páginas web, tiendas en línea y publicidad para negocios en Costa Rica</title>
 <meta name="description" content="Páginas web, apps, tiendas en línea y publicidad en Facebook, Instagram y Google para negocios en Costa Rica. Entrega en 7 días hábiles, WhatsApp y Google Maps incluidos. Desde ₡45.000.">
 <link rel="canonical" href="https://www.dailyedgecr.com/">
@@ -1009,6 +1026,12 @@ details.cond{max-width:760px;margin:0 auto}
     start();
   })();
 </script>
-
+<!-- Meta Pixel: clics a WhatsApp -->
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+  if (a && window.fbq) { fbq('track', 'Contact'); }
+});
+</script>
 </body>
 </html>
